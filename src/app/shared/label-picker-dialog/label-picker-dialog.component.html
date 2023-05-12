@@ -1,0 +1,17 @@
+<app-dialog
+title="Pick Labels"
+  (onClose)="close()"
+  *ngIf="dialogVisible"
+  [actionButton]="[
+
+    { text: 'Done', onClick: close.bind(this) }
+  ]"
+>
+  <div id="labels">
+    <div class="label" (click)="onLabelClick(label.id)" *ngFor="let label of labels">
+      <i class="fa-solid fa-tag tagIcon"></i>
+      <div class="content">{{ label.title }}</div>
+      <i *ngIf="isSelected(label.id)" class="fa-solid fa-check"></i>
+    </div>
+  </div>
+</app-dialog>

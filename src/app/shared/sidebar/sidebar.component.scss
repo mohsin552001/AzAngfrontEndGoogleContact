@@ -1,0 +1,93 @@
+#createContactButton{
+  cursor: pointer;
+  background-color: #fff;
+  border: 0px;
+  outline: none;
+  padding-top: 2px;
+  padding-right: 24px;
+  padding-bottom: 2px;
+  padding-left: 12px;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.302), 0 1px 3px 1px rgba(60,64,67,.149);
+border-radius: 24px 24px 24px 24px;
+height: 48px;
+color: #3c4043;
+font-size: 14px;
+display: flex;
+align-items: center;
+gap: 5px;
+width: 150px;
+margin-bottom: 20px;
+margin-left: 5px;
+
+margin-top: 20px;
+}
+
+.container{
+  width: 250px;
+  padding-right: 14px;
+  padding-left: 14px;
+}
+
+h4{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 22px;
+}
+.menuContainer{
+.menuItems{
+  display: flex;
+  gap: 16px;
+  color: rgb(32, 33, 36);
+ padding: 9px 24px ;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  i{
+    color: rgb(32, 33, 36);
+  }
+
+
+
+  .content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+    .actions{
+      display: flex;
+      gap: 16px;
+      display: none;
+      i{
+        color: rgba(188, 188, 188, 0.87);
+        cursor: pointer;
+      }
+      .actonButton{
+        &:hover{
+          color: rgb(42, 42, 42);
+        }
+
+      }
+    }
+
+
+  }
+
+   &:hover{
+    // color: rgb(241, 243, 244);
+    .content{
+      .actions{
+        display: flex;
+      }
+      .counter{
+        display: none;
+      }
+    }
+  }
+
+  &.selected{
+    background-color: rgb(232, 2403, 254);
+    color: rgb(25, 103, 210);
+  }
+}
+}

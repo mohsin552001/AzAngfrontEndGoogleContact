@@ -1,0 +1,98 @@
+#container{
+  padding: 20px;
+  #header{
+    display: flex;gap: 40px;align-items: center;
+padding: 30px 80px;
+position: relative;
+
+width: 50%;
+#backButton{
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  cursor: pointer;
+
+}
+    #headerContent{
+flex-grow: 1;
+
+#name{
+font-size: 28px;
+margin-bottom: 10px;
+}
+
+#labelSection{
+display: flex;
+gap: 10px;
+  .label{
+border: 1px solid rgb(218, 220, 224);
+border-radius: 20px;
+padding: 7px 15px;
+font-size: 15px;
+cursor: pointer;
+
+  }
+
+  .labelsPickerButton, .label{
+    border: 1px solid rgb(218, 220, 224);
+
+    &:hover{
+      background-color: rgb(243, 243, 243);
+    }
+
+  }
+.labelsPickerButton{
+  border-radius: 50%;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+i{
+  color: rgb(25, 103, 210);
+}
+
+
+}
+
+}
+    }
+
+    #headerActoins{
+      min-width: 100px;
+      align-self: flex-end;
+      display: flex;
+      gap: 10px ;
+    }
+  }
+#contentContainer{
+  border-top: 1px solid #ccc;
+  padding-top: 50px;
+
+  #detailSectoin{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 30%;
+h4{
+  margin-top: 0px;
+}
+    .link{
+display: flex;
+gap: 15px;
+cursor: pointer;
+padding-bottom: 20px;
+
+color: rgb(26,115 , 232);
+i{
+  color: rgb(128, 134, 139);
+}
+&:hover{
+  color: rgb(23, 78, 166);
+}
+    }
+  }
+}
+
+}

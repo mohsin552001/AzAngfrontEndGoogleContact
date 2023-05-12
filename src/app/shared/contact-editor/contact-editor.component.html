@@ -1,0 +1,65 @@
+<div id="container">
+  <div id="header">
+    <i routerLink="/" class="fa-solid fa-close" id="backButton"></i>
+    <div id="avatarSection">
+     <label id="uploadButton">
+<i class="fa-solid fa-image"></i>
+<input type="file" id="imageInput">
+     </label>
+    </div>
+
+    <div id="headerContent">
+      <div id="name">{{form.value.name}}</div>
+      <div id="labelSection">
+        <div class="label" *ngFor="let label of selectedLabels">{{label.title}}</div>
+
+        <div class="labelsPickerButton">
+          <i (click)="openLabelsPickerDialog()" class="fa-solid fa-tag"></i>
+        </div>
+      </div>
+    </div>
+    <div id="headerActoins">
+      <button class="primaryButton2" [disabled]="!form.valid" (click)="submitClicked.emit(form.value)">
+        Save
+      </button>
+
+    </div>
+  </div>
+
+  <div id="contentContainer">
+
+    <div id="editorSectoin" [formGroup]="form">
+
+      <div class="row">
+        <div class="iconSection">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="inputSection">
+          <input type="text" placeholder="Name" formControlName="name">
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="iconSection">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="inputSection">
+          <input type="text" placeholder="Email" formControlName="email">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="iconSection">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="inputSection">
+          <input type="text" placeholder="Phone" formControlName="phone">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-label-picker-dialog (onSelectedLabelsChange)="onSelectedLabelsChange($event)"  ></app-label-picker-dialog>

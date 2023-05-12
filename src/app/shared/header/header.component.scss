@@ -1,0 +1,53 @@
+#container{
+  display: flex;
+  align-items: center;
+#logoSection{
+  cursor: pointer;
+display: flex;
+align-items: center;
+min-width: 200px;
+font-size: 22px;
+gap: 10px;
+color: #606060;
+font-family: Arial, Helvetica, sans-serif;
+}
+#toggleButton{
+  cursor: pointer;
+min-width: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+  #searchContainer{
+    flex-grow: 1;
+    input{
+      width: 50%;
+      border: 0px;
+outline: none;
+background-color: #f2f2f2;
+padding-left: 40px;
+padding-right: 10px;
+padding-top: 5px;
+padding-bottom: 5px;
+height: 40px;
+border-radius: 5px  ;
+
+
+
+
+
+    }
+
+    #searchInputContainer{
+      position: relative;
+
+      #searchIcon{
+        position: absolute;
+        top: 15px;
+        left:15px;
+        color: #333;
+      }
+    }
+
+  }
+}

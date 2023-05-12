@@ -1,0 +1,13 @@
+
+
+
+<div id="container"  [ngClass]="{sidebarOpened:sidebarOpen}">
+  <app-header (toggleMenuClicked)="toggleSidebar()"></app-header>
+
+  <div id="contentContainer">  <app-sidebar> </app-sidebar>
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+
+</div>

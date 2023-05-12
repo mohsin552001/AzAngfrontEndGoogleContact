@@ -1,0 +1,45 @@
+<div id="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Labels</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="contactsCounter">
+        <td colspan="4">Contacts ({{contacts.length}})</td>
+      </tr>
+      <tr [routerLink]="'/contact/detail/'+contact.id" *ngFor="let contact of contacts">
+        <td style="display: flex; gap: 30px; align-items: center">
+          <app-avatar
+            style="height: 40px; width: 40px"
+            [word]="contact.name"
+          ></app-avatar>
+          {{ contact.name }}
+        </td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>
+          <div class="labels">
+            <div class="label" *ngFor="let label of contact.labels">
+              {{ label.title }}
+            </div>
+          </div>
+        </td>
+        <td (click)="$event.stopImmediatePropagation()">
+          <div class="actionBtnContainer">
+            <i
+              class="fa-regular fa-trash-can actionBtn"
+              (click)="delete(contact.id)"
+            ></i
+            ><i class="fa-solid fa-pen actionBtn"></i>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

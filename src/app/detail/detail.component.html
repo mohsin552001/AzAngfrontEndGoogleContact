@@ -1,0 +1,45 @@
+<div id="container" *ngIf="contact">
+  <div id="header">
+    <i class="fa-solid fa-arrow-left" routerLink="/" id="backButton"></i>
+    <div id="avatarSection">
+      <app-avatar
+        [word]="contact.name"
+        style="width: 162px; height: 162px; display: block; font-size: 70px"
+      ></app-avatar>
+    </div>
+
+    <div id="headerContent">
+      <div id="name">{{ contact.name }}</div>
+      <div id="labelSection">
+        <div class="label" *ngFor="let label of contact.labels">
+          {{ label.title }}
+        </div>
+
+        <div class="labelsPickerButton">
+          <i (click)="openLabelsPickerDialog()" class="fa-solid fa-tag"></i>
+        </div>
+      </div>
+    </div>
+    <div id="headerActoins">
+      <button class="primaryButton2" [routerLink]="'/contact/edit/'+contact.id">
+        Edit
+      </button>
+      <button class="defaultButton" (click)="delete()">Delete</button>
+    </div>
+  </div>
+
+  <div id="contentContainer">
+    <div id="detailSectoin">
+      <h4>Contact Details</h4>
+      <div class="link">
+        <i class="fa-regular fa-envelope"></i>{{contact.email}}
+      </div>
+      <div class="link"><i class="fa-solid fa-phone"></i>{{contact.phone}}</div>
+    </div>
+    <div id="editorSectoin"></div>
+  </div>
+</div>
+
+<div *ngIf="!contact && !loading"><h1>Contact Not found</h1></div>
+<div *ngIf="loading"><h1>Loading... plz wait...</h1></div>
+<app-label-picker-dialog></app-label-picker-dialog>

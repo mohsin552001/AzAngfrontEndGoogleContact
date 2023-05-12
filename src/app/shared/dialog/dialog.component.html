@@ -1,0 +1,11 @@
+<div id="container" (click)="onClose.emit()">
+  <div class="dialog " (click)="$event.stopImmediatePropagation()" >
+
+    <div id="header">{{title}}</div>
+    <div id="content"><ng-content ></ng-content></div>
+    <div id="actions">
+      <button (click)="button.onClick()"  *ngFor="let button of actionButton" class="primaryButton" >{{button.text}} </button>
+
+    </div>
+  </div>
+</div>
