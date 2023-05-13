@@ -11,3 +11,13 @@
   </div>
 
 </div>
+<app-dialog
+title="Add Label"  (onClose)="generalService.labelEditorDialogVisible=false" *ngIf="generalService.labelEditorDialogVisible">
+
+  <input [(ngModel)]="newLabelInputValue" type="text" placeholder="Title">
+
+<div actions>
+  <button (click)="createLabel()"  class="primaryButton" >Save </button>
+</div>
+</app-dialog>
+

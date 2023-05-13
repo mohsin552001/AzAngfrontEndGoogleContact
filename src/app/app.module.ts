@@ -8,25 +8,21 @@ import { SidebarModule } from './shared/sidebar/sidebar.module';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AvatarModule } from './shared/avatar/avatar.module';
-
-
-
+import { DialogModule } from './shared/dialog/dialog.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContactsComponent,
-
-
-
-
-
-  ],
+  declarations: [AppComponent, ContactsComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,HeaderModule,SidebarModule, FontAwesomeModule,AvatarModule
+    AppRoutingModule,
+    HeaderModule,
+    SidebarModule,
+    FontAwesomeModule,
+    AvatarModule,
+    DialogModule,FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

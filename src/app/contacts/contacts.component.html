@@ -36,7 +36,7 @@
               class="fa-regular fa-trash-can actionBtn"
               (click)="delete(contact.id)"
             ></i
-            ><i class="fa-solid fa-pen actionBtn"></i>
+            ><i [routerLink]="'contact/edit/'+contact.id" class="fa-solid fa-pen actionBtn"></i>
           </div>
         </td>
       </tr>

@@ -4,6 +4,7 @@
     <div id="header">{{title}}</div>
     <div id="content"><ng-content ></ng-content></div>
     <div id="actions">
+      <ng-content select="[actions]"></ng-content>
       <button (click)="button.onClick()"  *ngFor="let button of actionButton" class="primaryButton" >{{button.text}} </button>
 
     </div>

@@ -9,8 +9,8 @@ import { environment } from 'src/environments/environment';
 export class ServicesService {
   constructor() {}
 
-  async getContacts() {
-    let response = await axios.get(`${environment.backendUrl}/contact`);
+  async getContacts(keyWords:string='') {
+    let response = await axios.get(`${environment.backendUrl}/contact?searchKeyword=${keyWords}`);
     return response.data;
   }
 
@@ -39,5 +39,19 @@ export class ServicesService {
     let response = await axios.post(`${environment.backendUrl}/contact/`, data);
 
     return response.data;
+
+  }
+
+  async update(data: {
+    title: string;
+    labels: number[];
+    email: string;
+    phone: string;
+    id:number;
+  }) {
+    let response = await axios.patch(`${environment.backendUrl}/contact/`, data);
+
+    return response.data;
+
   }
 }

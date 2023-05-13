@@ -9,6 +9,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactEditorComponent implements OnInit {
   @ViewChild(LabelPickerDialogComponent) labelPickerDialog?:LabelPickerDialogComponent;
+
   form:FormGroup;
 
   @Output()  submitClicked=new EventEmitter()
@@ -21,10 +22,27 @@ labels=[
     name:['',[Validators.required]],
     email:['',[Validators.required,Validators.email]],
     phone:['',[Validators.required,Validators.pattern('[- +()0-9]+')]],
-    labels:this.fb.array([])
+    labels:this.fb.array([]),
+    id:['']
     })
   }
 
+  loadContact(contact :any){
+    this.form.patchValue({
+      name:contact.name,
+      email:contact.email,
+      phone:contact.phone,
+      id:contact.id,
+
+
+    })
+
+    contact.labels.forEach((label:any) => {
+
+      (this.form.get('labels') as FormArray).push(this.fb.control(label.id))
+    });
+
+  }
 
   get selectedLabels(){
     let labels= this.labelPickerDialog?.labels.filter((label)=>this.form.value.labels.includes(label.id))
@@ -39,6 +57,7 @@ labels=[
   }
 
   onSelectedLabelsChange(event:{id:number,selected:boolean}){
+    console.log(22992)
 if(event.selected){
  ( this.form.get('labels') as FormArray).push(this.fb.control(event.id))
 }else{

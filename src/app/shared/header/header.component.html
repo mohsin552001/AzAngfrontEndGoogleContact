@@ -6,7 +6,7 @@
   <div id="searchContainer">
     <div id="searchInputContainer">
       <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search">
+      <input type="text" (keyup.enter)="search($event)" placeholder="Search">
     </div>
 
   </div>

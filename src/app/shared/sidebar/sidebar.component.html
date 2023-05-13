@@ -4,17 +4,17 @@
   </div>
 
   <div class="menuContainer">
-    <div class="menuItems selected">
+    <div class="menuItems selected" routerLink="/">
       <i class="fa-regular fa-user"></i>
       Contacts
     </div>
   </div>
-<h4>Labels  <i class="fa-regular fa-plus"></i></h4>
+<h4>Labels  <i style="cursor: pointer;" (onclose)="generalService.labelEditorDialogVisible=false" (click)="generalService.labelEditorDialogVisible=true" class="fa-regular fa-plus"></i></h4>
   <div class="menuContainer">
-    <div class="menuItems">
+    <div class="menuItems" *ngFor="let label of labels" (click)="deleteLabel(label.id)">
       <i class="fa-solid fa-tag"></i>
     <div class="content">
-      Test
+     {{label.title}}
       <div class="actions">
         <i class="fa-solid  fa-pen actonButton"></i>
         <i class="fa-solid  fa-trash actonButton"></i>
@@ -24,3 +24,4 @@
     </div>
   </div>
 </div>
+
